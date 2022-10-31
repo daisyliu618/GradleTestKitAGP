@@ -101,4 +101,4 @@ val buildGradleFile = """
 
         }
 
-    """.trimIndent()
+""".trimIndent()

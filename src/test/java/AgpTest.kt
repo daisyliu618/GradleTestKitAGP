@@ -87,3 +87,18 @@ dependencyResolutionManagement {
     }
 }
 """
+
+
+@Language("groovy")
+val buildGradleFile = """
+
+        task printComponents {
+           doLast {
+              components.all { c ->
+                    project.logger.warn("COMPONENT: " + c)
+              }
+           }
+
+        }
+
+    """.trimIndent()

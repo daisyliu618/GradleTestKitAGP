@@ -30,6 +30,14 @@ class AgpTest {
         rule.newFile("build.gradle").writeText(createBuildGradle(agpVersion = "7.3.0-alpha04"))
         runGradleBuild()
     }
+    
+//     @Test
+//     fun component_publish_agp_7_3_0_alpha04() {
+//         rule.newFile("build.gradle").writeText(createBuildGradle(agpVersion = "7.3.0-alpha04"))
+//         runGradleBuild()
+//         val result = buildWithGradleWrapper(productTemporaryFolder, ":printComponents", "-is")
+//         assertTrue(result.output.contains("COMPONENT:"))
+//      }
 
     private fun runGradleBuild() {
         GradleRunner.create().withProjectDir(rule.root)
@@ -89,16 +97,15 @@ dependencyResolutionManagement {
 """
 
 
-@Language("groovy")
-val buildGradleFile = """
+// @Language("groovy")
+// val buildGradleFile = """
+//         task printComponents {
+//            doLast {
+//               components.all { c ->
+//                     project.logger.warn("COMPONENT: " + c)
+//               }
+//            }
 
-        task printComponents {
-           doLast {
-              components.all { c ->
-                    project.logger.warn("COMPONENT: " + c)
-              }
-           }
+//         }
 
-        }
-
-""".trimIndent()
+// """.trimIndent()

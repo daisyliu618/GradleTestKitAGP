@@ -16,3 +16,13 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
 }
 
+
+task printComponents {
+   doLast {
+      components.all { c ->
+            project.logger.warn("COMPONENT: " + c)
+      }
+   }
+
+}
+
